@@ -1,0 +1,22 @@
+{
+    "name": "magentacss",
+    "version": "1.0.0",
+    "description": "A new look for the web.",
+    "author": {
+        "name": "Simao Nziaka",
+        "email": "sdnziaka@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/akaizn-junior/magenta"
+    },
+    "license": "MIT",
+    "keywords": [
+        "css",
+        "magenta",
+        "scss",
+        "layout",
+        "beautiful",
+        "customize"
+    ]
+}

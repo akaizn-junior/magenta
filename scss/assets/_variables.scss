@@ -1,0 +1,24 @@
+//basic
+$main-color: magenta;
+$mark-color: $main-color;
+$selection-color: $main-color;
+
+//tooltip
+$tooltip-bg: #333333;
+$tooltip-border: 1px solid #000;
+$tooltip-border-radius: 0;
+$tooltip-color: white;
+
+//links
+$link-color: #48a3ff;
+$link-underline-color: $main-color;//rgb(241, 105, 105);
+
+//borders
+$border-color: #efefef;
+
+//buttons
+$button-bg: rgb(106, 142, 189);
+$button-border-color: rgba(00,66,99, 0.7);
+
+//headings
+$h1-size: 25px;

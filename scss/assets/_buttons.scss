@@ -1,0 +1,33 @@
+
+.button,
+button,
+input[type='reset'],
+input[type='submit'],
+input[type='button']
+{
+  @include button($button-bg, #ffffff, $button-border-color);
+}
+
+.button:hover,
+button:hover,
+input[type='reset']:hover,
+input[type='submit']:hover,
+input[type='button']:hover
+{
+  @include button-hover-state($button-bg, $button-border-color);
+}
+
+.button:focus,
+button:focus,
+input[type='reset']:focus,
+input[type='submit']:focus,
+input[type='button']:focus
+{
+  @include button-hover-state($button-bg, $button-border-color);
+}
+
+a.button
+{
+  text-decoration:none;
+  text-shadow:none;
+}

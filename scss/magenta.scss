@@ -1,0 +1,396 @@
+//@import "normalize";
+@import "assets/variables";
+@import "assets/mixins";
+@import "assets/buttons";
+
+*{
+  box-sizing: border-box;
+}
+
+.wrapper{
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.appbrand{
+  color: $main-color;
+  font-weight: bold;
+
+  a{
+    text-decoration: none;
+    color: $main-color !important;
+
+    &:hover{
+      border:none;
+    }
+  }
+}
+
+a.appbrand{
+  text-decoration: none;
+  color: $main-color !important;
+
+  &:hover{
+    border:none;
+  }
+}
+
+a{
+  .appbrand{
+    text-decoration: none;
+    color: $main-color !important;
+
+    &:hover{
+      border:none;
+    }
+  }
+}
+
+body{
+  background: white;
+  color:rgb(24, 13, 13);
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+/*Headings*/
+h1, h2, h3, h4, h5, h6 {
+  font-family: serif;
+}
+
+h1{
+  font-size: $h1-size;
+}
+
+h2{
+  font-size: $h1-size - 3;
+}
+
+h3{
+  font-size: $h1-size - 6;
+}
+
+h4{
+  font-size: $h1-size - 9;
+}
+
+h5{
+  font-size: $h1-size - 12;
+}
+
+h6{
+  font-size: $h1-size - 15;
+}
+
+/*Lists*/
+ul li{ list-style-type:none; word-wrap:break-word; }
+
+/*links*/
+a{
+  color: $link-color;
+  text-decoration:none !important;
+
+  &:link{
+    color: darken($link-color, 10%);
+  }
+
+  &:visited{
+    color: darken($link-color, 10%);
+  }
+
+  &:focus{
+    color: lighten($link-color, 5%);
+  }
+
+  &:hover{
+    color: lighten($link-color, 5%);
+    border-bottom: 1px solid $link-underline-color;
+  }
+
+  &:active{
+    color: lighten($link-color, 5%);
+  }
+}
+
+/* tables */
+
+/*header*/
+.header,
+header{
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 1%;
+  padding-left: 1%;
+  min-height: 100px;
+}
+
+/*footer*/
+.footer,
+footer{
+  border-top: 1px solid $border-color;
+  margin-top: 1%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  font-size: small;
+}
+
+/*forms*/
+
+input::placeholder{
+  color: $main-color;
+}
+textarea,
+input{
+  outline: none;
+  font-size: 15px;
+  padding: 5px;
+  border: 1px solid $main-color;
+  border-radius: 4px;
+}
+
+textarea{
+  resize: none;
+}
+
+input:focus{
+  border: 1px solid darken($main-color, 5%);
+}
+
+/* Handy classes */
+
+.inline-block{
+  display:inline-block;
+}
+
+.float-left{
+  float:left;
+}
+
+.float-right{
+  float:right;
+}
+
+.no-float{
+  float:none; clear:both;
+}
+
+.fixed{
+  position:fixed;
+}
+
+.hide{
+  display:none;
+}
+
+/*Custom*/
+.menu{
+
+  width: fit-content;
+  li{
+    display: inline-block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    ul{
+      display: block;
+    }
+  }
+
+  li ~ li::before{
+    content: "/";
+  }
+}
+
+.list{
+  width: fit-content;
+  li{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 0px;
+  }
+
+  li ~ li{
+    border-top: 1px solid rgb(201, 201, 201);
+  }
+}
+
+.banner{
+  width: 100%;
+  background: #3a3939;
+  border-bottom: 2px solid black;
+  min-height: 100px;
+  padding: 5px;
+}
+
+.navbar{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: rgb(182, 96, 96);
+
+  * {
+    display: inline-block;
+    margin-top: 4px;
+  }
+
+  &:first-child{
+    padding-left: 20px;
+  }
+}
+
+.tooltip {
+  width: 25%;
+  max-height: 200px;
+  overflow-y: scroll;
+  background: $tooltip-bg;
+  border: $tooltip-border;
+  border-radius: $tooltip-border-radius;
+  color: $tooltip-color;
+  font-size:14px;
+  padding:4px 10px;
+  z-index:3000;
+}
+
+.mark,
+mark{
+  width: fit-content;
+  background: $mark-color;
+}
+
+/*Even though the code is the same they must be written separately.
+For some reason using a comma to extend the code for both does not work for these selectors.*/
+::selection{
+  background: $selection-color;
+  text-shadow:none;
+  color:#ffffff;
+}
+
+::-moz-selection{
+  background: $selection-color;
+  text-shadow:none;
+  color:#ffffff;
+}
+
+/*Make the children of an element aligned horizontally*/
+.alignChildrenHorizontally{
+  * {
+    display: inline-block;
+  }
+}
+
+.search{
+  input{
+    border-radius: 0px;
+  }
+  input[type="reset"],
+  input[type="submit"],
+  input[type='button'],
+  button {
+    border-radius: 0px;
+    margin: -5px;
+  }
+}
+
+.box{
+  padding: 1%;
+  margin-bottom:1%;
+}
+
+.mg-form-group {
+  margin: 1%;
+
+  label {
+    color: rgb(66, 29, 29);
+    font-weight: normal;
+    width: 8em;
+  }
+
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.tab{
+  padding-left: 55px;
+}
+
+.box-shadow-inset{
+  @include box-shadow-inset($border-color);
+}
+
+.display-table{
+  display: table;
+  width: 100%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.vertical-align{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.highlight {
+  outline: 2px solid magenta !important;
+  box-shadow: 2px 2px 3px magenta;
+}
+
+//make your colors a bit lighter
+.magenta {
+  color: magenta;
+}
+
+.light {
+  opacity: .6;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.blue {
+  color: blue;
+}
+
+.black {
+  color: black;
+}
+
+.light-black-small{
+  color: #676767;
+  font-size: 12px;
+
+  a{
+    color: #676767;
+  }
+}
+
+//text/font sizes
+.xsm-text {
+  font-size: 10px;
+}
+
+.sm-text {
+  font-size: 12px;
+}
+
+.md-text {
+  font-size: 17px;
+}
+
+.lg-text {
+  font-size: 30px;
+}
+
+.xlg-text {
+  font-size: 40px;
+}
